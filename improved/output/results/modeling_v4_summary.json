@@ -1,0 +1,209 @@
+{
+  "_meta": {
+    "script": "modeling_v4",
+    "generated_at": "2026-06-19 10:48:43"
+  },
+  "featuresets": {
+    "all": [
+      "age",
+      "tenure_days",
+      "region_code_enc",
+      "income_group_enc",
+      "credit_score",
+      "num_active_cards",
+      "total_deposit_balance",
+      "total_loan_balance",
+      "card_cash_service_amt",
+      "card_loan_amt",
+      "fin_overdue_days",
+      "fin_asset_trend_score",
+      "log_total_deposit_balance",
+      "log_total_loan_balance",
+      "log_card_cash_service_amt",
+      "log_card_loan_amt",
+      "loan_to_deposit",
+      "cardloan_to_deposit",
+      "log_loan_to_deposit",
+      "credit_x_trend",
+      "card_debt_total",
+      "log_card_debt_total",
+      "trans_count",
+      "amt_total",
+      "amt_mean",
+      "amt_min",
+      "amt_max",
+      "recency_days",
+      "active_span",
+      "amt_cv",
+      "freq_per_active",
+      "gap_mean",
+      "gap_max",
+      "gap_cv",
+      "cnt_trend_ratio",
+      "amt_trend_ratio",
+      "online_ratio",
+      "online_ratio_recent",
+      "channel_shift",
+      "cat_hhi",
+      "cat_nunique",
+      "top_cat_share",
+      "installment_ratio"
+    ],
+    "denoised": [
+      "region_code_enc",
+      "income_group_enc",
+      "credit_score",
+      "total_deposit_balance",
+      "card_cash_service_amt",
+      "card_loan_amt",
+      "fin_asset_trend_score",
+      "log_total_deposit_balance",
+      "log_card_cash_service_amt",
+      "log_card_loan_amt"
+    ],
+    "new_candidates": [
+      "loan_to_deposit",
+      "cardloan_to_deposit",
+      "log_loan_to_deposit",
+      "credit_x_trend",
+      "card_debt_total",
+      "log_card_debt_total",
+      "active_span",
+      "amt_cv",
+      "freq_per_active",
+      "gap_mean",
+      "gap_max",
+      "gap_cv",
+      "cnt_trend_ratio",
+      "amt_trend_ratio",
+      "online_ratio_recent",
+      "channel_shift",
+      "cat_hhi",
+      "cat_nunique",
+      "top_cat_share"
+    ]
+  },
+  "step1_new_feature_validation": [
+    {
+      "feature": "loan_to_deposit",
+      "z_score": -0.733776,
+      "verdict": "noise"
+    },
+    {
+      "feature": "cardloan_to_deposit",
+      "z_score": 20.481867,
+      "verdict": "real_signal"
+    },
+    {
+      "feature": "log_loan_to_deposit",
+      "z_score": 0.0,
+      "verdict": "noise"
+    },
+    {
+      "feature": "credit_x_trend",
+      "z_score": -0.510003,
+      "verdict": "noise"
+    },
+    {
+      "feature": "card_debt_total",
+      "z_score": 7.214079,
+      "verdict": "real_signal"
+    },
+    {
+      "feature": "log_card_debt_total",
+      "z_score": 0.0,
+      "verdict": "noise"
+    },
+    {
+      "feature": "active_span",
+      "z_score": -1.312263,
+      "verdict": "noise"
+    },
+    {
+      "feature": "amt_cv",
+      "z_score": -2.551217,
+      "verdict": "noise"
+    },
+    {
+      "feature": "freq_per_active",
+      "z_score": -3.58271,
+      "verdict": "noise"
+    },
+    {
+      "feature": "gap_mean",
+      "z_score": -0.655798,
+      "verdict": "noise"
+    },
+    {
+      "feature": "gap_max",
+      "z_score": -0.879051,
+      "verdict": "noise"
+    },
+    {
+      "feature": "gap_cv",
+      "z_score": -1.811145,
+      "verdict": "noise"
+    },
+    {
+      "feature": "cnt_trend_ratio",
+      "z_score": -1.902125,
+      "verdict": "noise"
+    },
+    {
+      "feature": "amt_trend_ratio",
+      "z_score": -1.033604,
+      "verdict": "noise"
+    },
+    {
+      "feature": "online_ratio_recent",
+      "z_score": 0.293589,
+      "verdict": "noise"
+    },
+    {
+      "feature": "channel_shift",
+      "z_score": -2.764568,
+      "verdict": "noise"
+    },
+    {
+      "feature": "cat_hhi",
+      "z_score": -1.80006,
+      "verdict": "noise"
+    },
+    {
+      "feature": "cat_nunique",
+      "z_score": -1.407631,
+      "verdict": "noise"
+    },
+    {
+      "feature": "top_cat_share",
+      "z_score": -3.075378,
+      "verdict": "noise"
+    }
+  ],
+  "step2_featureset_cv": {
+    "all": 0.796265,
+    "denoised": 0.797535,
+    "denoised+new": 0.797454
+  },
+  "step2_best_set": "denoised",
+  "step3_ensemble": {
+    "individual": {
+      "lgb": 0.797987,
+      "xgb": 0.797206,
+      "cat": 0.797429
+    },
+    "blend_auc": 0.798235,
+    "blend_w": [
+      0.7,
+      0.0,
+      0.3
+    ]
+  },
+  "step4_final": {
+    "auc": 0.798235,
+    "rmse": 1413900.389765,
+    "score": 0.469044,
+    "v3_auc": 0.79817,
+    "v3_score": 0.46901
+  }
+}

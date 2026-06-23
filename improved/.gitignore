@@ -1,0 +1,22 @@
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+output/submissions/*
+!output/submissions/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+*.swp

@@ -1,0 +1,206 @@
+{
+  "_meta": {
+    "script": "modeling_v1",
+    "generated_at": "2026-06-16 05:10:58"
+  },
+  "featuresets": {
+    "full": [
+      "age",
+      "tenure_days",
+      "gender_enc",
+      "region_code_enc",
+      "income_group_enc",
+      "credit_score",
+      "num_active_cards",
+      "total_deposit_balance",
+      "total_loan_balance",
+      "card_cash_service_amt",
+      "card_loan_amt",
+      "fin_overdue_days",
+      "fin_asset_trend_score",
+      "log_total_deposit_balance",
+      "log_total_loan_balance",
+      "log_card_cash_service_amt",
+      "log_card_loan_amt",
+      "trans_count",
+      "trans_amount_total",
+      "trans_amount_mean",
+      "trans_amount_std",
+      "trans_amount_max",
+      "trans_amount_min",
+      "recency_days",
+      "online_ratio",
+      "installment_ratio"
+    ],
+    "denoised": [
+      "region_code_enc",
+      "income_group_enc",
+      "credit_score",
+      "total_deposit_balance",
+      "card_cash_service_amt",
+      "card_loan_amt",
+      "fin_asset_trend_score",
+      "log_total_deposit_balance",
+      "log_card_cash_service_amt",
+      "log_card_loan_amt"
+    ],
+    "core": [
+      "card_loan_amt",
+      "log_card_loan_amt",
+      "total_deposit_balance",
+      "log_total_deposit_balance",
+      "card_cash_service_amt",
+      "log_card_cash_service_amt",
+      "credit_score"
+    ]
+  },
+  "A2_A3_churn": {
+    "full": {
+      "individual_auc": {
+        "lgb": 0.78421,
+        "xgb": 0.784541,
+        "cat": 0.790258,
+        "rf": 0.790965
+      },
+      "oof_corr": [
+        [
+          1.0,
+          0.9618745221887286,
+          0.9566732102331901,
+          0.9344147296357893
+        ],
+        [
+          0.9618745221887286,
+          1.0,
+          0.9728320142968506,
+          0.9422443282845756
+        ],
+        [
+          0.9566732102331901,
+          0.9728320142968505,
+          1.0,
+          0.9560916076806445
+        ],
+        [
+          0.9344147296357894,
+          0.9422443282845756,
+          0.9560916076806445,
+          1.0
+        ]
+      ],
+      "stack_auc": 0.792312,
+      "blend_auc": 0.792841,
+      "blend_w": [
+        0.0,
+        0.0,
+        0.5,
+        0.5
+      ]
+    },
+    "denoised": {
+      "individual_auc": {
+        "lgb": 0.784036,
+        "xgb": 0.786724,
+        "cat": 0.790263,
+        "rf": 0.791027
+      },
+      "oof_corr": [
+        [
+          1.0,
+          0.9686947379102606,
+          0.9605829751623952,
+          0.9449142492879228
+        ],
+        [
+          0.9686947379102606,
+          1.0,
+          0.9742586217433352,
+          0.9527509934957356
+        ],
+        [
+          0.9605829751623952,
+          0.9742586217433352,
+          1.0,
+          0.9586925968209472
+        ],
+        [
+          0.9449142492879228,
+          0.9527509934957354,
+          0.9586925968209472,
+          1.0
+        ]
+      ],
+      "stack_auc": 0.792306,
+      "blend_auc": 0.79277,
+      "blend_w": [
+        0.0,
+        0.0,
+        0.5,
+        0.5
+      ]
+    },
+    "core": {
+      "individual_auc": {
+        "lgb": 0.659561,
+        "xgb": 0.663759,
+        "cat": 0.671642,
+        "rf": 0.662235
+      },
+      "oof_corr": [
+        [
+          1.0,
+          0.9131375383917293,
+          0.8888759470936813,
+          0.8836292152894442
+        ],
+        [
+          0.9131375383917293,
+          0.9999999999999998,
+          0.9358384273487471,
+          0.9123012029487552
+        ],
+        [
+          0.8888759470936812,
+          0.9358384273487472,
+          1.0,
+          0.9155703927307453
+        ],
+        [
+          0.883629215289444,
+          0.912301202948755,
+          0.9155703927307454,
+          1.0
+        ]
+      ],
+      "stack_auc": 0.669024,
+      "blend_auc": 0.671642,
+      "blend_w": [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  },
+  "A_best_churn": {
+    "featureset": "full",
+    "auc": 0.792841
+  },
+  "A4_ltv": {
+    "rmse_log1p": 1492437.336913,
+    "rmse_cbrt": 1415309.666775,
+    "chosen": "cbrt"
+  },
+  "A5_score": {
+    "final_auc": 0.792841,
+    "final_rmse": 1415309.666775,
+    "final_score": 0.466342,
+    "target": 0.469,
+    "rank1": 0.47027
+  },
+  "A5_submission": {
+    "churn_mean": 0.098661,
+    "ltv_mean": 824197.253115,
+    "n_rows": 40000
+  }
+}

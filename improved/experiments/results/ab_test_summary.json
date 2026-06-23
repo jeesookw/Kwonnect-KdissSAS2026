@@ -1,0 +1,78 @@
+{
+  "_meta": {
+    "script": "ab_test_foundation_x_tuning",
+    "generated_at": "2026-06-23 04:36:25"
+  },
+  "featuresets": {
+    "full": [
+      "age",
+      "tenure_days",
+      "gender_enc",
+      "region_code_enc",
+      "income_group_enc",
+      "is_married_bin",
+      "credit_score",
+      "num_active_cards",
+      "total_deposit_balance",
+      "total_loan_balance",
+      "card_cash_service_amt",
+      "card_loan_amt",
+      "fin_overdue_days",
+      "fin_asset_trend_score",
+      "log_total_deposit_balance",
+      "log_total_loan_balance",
+      "log_card_cash_service_amt",
+      "log_card_loan_amt",
+      "trans_count",
+      "trans_amount_total",
+      "trans_amount_mean",
+      "trans_amount_std",
+      "trans_amount_max",
+      "trans_amount_min",
+      "recency_days",
+      "online_ratio",
+      "installment_ratio"
+    ],
+    "denoised": [
+      "region_code_enc",
+      "income_group_enc",
+      "credit_score",
+      "total_deposit_balance",
+      "card_cash_service_amt",
+      "card_loan_amt",
+      "fin_asset_trend_score",
+      "log_total_deposit_balance",
+      "log_card_cash_service_amt",
+      "log_card_loan_amt"
+    ]
+  },
+  "results": {
+    "A_full_baseline": 0.784938,
+    "B_full_tuned": 0.79716226229901,
+    "C_denoised_baseline": 0.784477,
+    "D_denoised_tuned": 0.7975148452623114,
+    "tuning_gain_full(B-A)": 0.012224,
+    "tuning_gain_denoised(D-C)": 0.013038,
+    "diff_of_gains((D-C)-(B-A))": 0.000814,
+    "final_auc_diff(D-B)": 0.0003525829633014288,
+    "verdict": "주장 부분기각: 튜닝 효과는 두 토대에서 비슷함(±0.001 내). 정리는 튜닝 효과와 독립적이며, 점수보다 해석/안정성/일반화에 기여. → 보고서 문장을 인과 단정에서 '독립 기여'로 톤다운 권장.",
+    "best_params_full": {
+      "n_estimators": 489,
+      "learning_rate": 0.009966453703585969,
+      "num_leaves": 11,
+      "min_child_samples": 81,
+      "subsample": 0.7221433924031753,
+      "colsample_bytree": 0.6917732355483628,
+      "reg_lambda": 5.12830822969311
+    },
+    "best_params_denoised": {
+      "n_estimators": 600,
+      "learning_rate": 0.00877359510881983,
+      "num_leaves": 11,
+      "min_child_samples": 46,
+      "subsample": 0.7623307846812186,
+      "colsample_bytree": 0.5056554524708124,
+      "reg_lambda": 3.5918691833401275
+    }
+  }
+}

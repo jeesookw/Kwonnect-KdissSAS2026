@@ -1,0 +1,114 @@
+{
+  "_meta": {
+    "script": "modeling_v3",
+    "generated_at": "2026-06-16 09:53:49"
+  },
+  "featureset": [
+    "region_code_enc",
+    "income_group_enc",
+    "credit_score",
+    "total_deposit_balance",
+    "card_cash_service_amt",
+    "card_loan_amt",
+    "fin_asset_trend_score",
+    "log_total_deposit_balance",
+    "log_card_cash_service_amt",
+    "log_card_loan_amt"
+  ],
+  "step1_optuna": {
+    "lgb": {
+      "auc": 0.7975148452623114,
+      "params": {
+        "n_estimators": 600,
+        "learning_rate": 0.00877359510881983,
+        "num_leaves": 11,
+        "min_child_samples": 46,
+        "subsample": 0.7623307846812186,
+        "colsample_bytree": 0.5056554524708124,
+        "reg_lambda": 3.5918691833401275
+      }
+    },
+    "xgb": {
+      "auc": 0.7971642991878531,
+      "params": {
+        "n_estimators": 541,
+        "learning_rate": 0.008280674981336025,
+        "max_depth": 4,
+        "min_child_weight": 4,
+        "subsample": 0.6384671623268863,
+        "colsample_bytree": 0.6156946480613841,
+        "reg_lambda": 3.438351079973601
+      }
+    },
+    "cat": {
+      "auc": 0.7972270559514556,
+      "params": {
+        "iterations": 309,
+        "learning_rate": 0.02591606816536431,
+        "depth": 5,
+        "l2_leaf_reg": 2.9293447203892966
+      }
+    },
+    "rf": {
+      "auc": 0.7957373306629107,
+      "params": {
+        "n_estimators": 515,
+        "max_depth": 8,
+        "min_samples_leaf": 34
+      }
+    }
+  },
+  "step2_diversity": {
+    "oof_corr": [
+      [
+        1.0,
+        0.997603642674995,
+        0.9911249302448532,
+        0.9912855108804302
+      ],
+      [
+        0.997603642674995,
+        0.9999999999999999,
+        0.9932728204679894,
+        0.9925630758297547
+      ],
+      [
+        0.9911249302448532,
+        0.9932728204679894,
+        1.0,
+        0.988207842499382
+      ],
+      [
+        0.9912855108804302,
+        0.9925630758297546,
+        0.9882078424993821,
+        1.0
+      ]
+    ],
+    "individual_auc": {
+      "lgb": 0.797805,
+      "xgb": 0.797362,
+      "cat": 0.797542,
+      "rf": 0.796142
+    }
+  },
+  "step3_ensemble": {
+    "blend_auc": 0.79817,
+    "blend_w": [
+      0.55,
+      0.0,
+      0.45,
+      -0.0
+    ],
+    "stack_auc": 0.797564,
+    "chosen": "blend",
+    "final_auc": 0.79817
+  },
+  "step4_final": {
+    "auc": 0.79817,
+    "rmse": 1413900.389765,
+    "score": 0.469011,
+    "v2_score": 0.4686,
+    "target": 0.469
+  }
+}

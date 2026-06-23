@@ -1,0 +1,573 @@
+{
+  "_meta": {
+    "script": "diagnostic_v1",
+    "generated_at": "2026-06-16 03:26:04"
+  },
+  "shapes": {
+    "train": [
+      60000,
+      30
+    ],
+    "test": [
+      40000,
+      28
+    ]
+  },
+  "feature_list": [
+    "age",
+    "tenure_days",
+    "is_married_bin",
+    "credit_score",
+    "num_active_cards",
+    "total_deposit_balance",
+    "total_loan_balance",
+    "card_cash_service_amt",
+    "card_loan_amt",
+    "fin_overdue_days",
+    "fin_asset_trend_score",
+    "log_total_deposit_balance",
+    "log_total_loan_balance",
+    "log_card_cash_service_amt",
+    "log_card_loan_amt",
+    "trans_count",
+    "trans_amount_total",
+    "trans_amount_mean",
+    "trans_amount_min",
+    "recency_days",
+    "online_ratio"
+  ],
+  "step0_is_married": {
+    "train_ratio": 0.651067,
+    "test_ratio": 0.6473,
+    "diff_pp": 0.376667,
+    "churn_rate_by_group": {
+      "0": {
+        "churn": 0.09901604891096676,
+        "n": 20936
+      },
+      "1": {
+        "churn": 0.09870980954331354,
+        "n": 39064
+      }
+    },
+    "verdict": "문서 기록 오류 가능 — Train/Test 거의 동일"
+  },
+  "step0_distribution_drift": [
+    {
+      "feature": "num_active_cards",
+      "ks": 0.0074,
+      "smd": 0.01716,
+      "mean_train": 3.48315,
+      "mean_test": 3.5125
+    },
+    {
+      "feature": "credit_score",
+      "ks": 0.006842,
+      "smd": 0.008442,
+      "mean_train": 739.53805,
+      "mean_test": 738.61675
+    },
+    {
+      "feature": "trans_amount_min",
+      "ks": 0.006267,
+      "smd": 0.005359,
+      "mean_train": 15524.08835,
+      "mean_test": 15544.44095
+    },
+    {
+      "feature": "tenure_days",
+      "ks": 0.006167,
+      "smd": 0.007454,
+      "mean_train": 959.312133,
+      "mean_test": 961.4643
+    },
+    {
+      "feature": "trans_amount_mean",
+      "ks": 0.005783,
+      "smd": 0.003579,
+      "mean_train": 71994.741615,
+      "mean_test": 71942.663279
+    },
+    {
+      "feature": "trans_count",
+      "ks": 0.005325,
+      "smd": 0.005046,
+      "mean_train": 17.991467,
+      "mean_test": 18.0128
+    },
+    {
+      "feature": "age",
+      "ks": 0.005217,
+      "smd": 0.007841,
+      "mean_train": 35.780917,
+      "mean_test": 35.86215
+    },
+    {
+      "feature": "card_loan_amt",
+      "ks": 0.004908,
+      "smd": 0.007151,
+      "mean_train": 121523.551867,
+      "mean_test": 124139.9541
+    },
+    {
+      "feature": "log_card_loan_amt",
+      "ks": 0.004908,
+      "smd": 0.009482,
+      "mean_train": 2.552734,
+      "mean_test": 2.601587
+    },
+    {
+      "feature": "online_ratio",
+      "ks": 0.004717,
+      "smd": 0.00046,
+      "mean_train": 0.599823,
+      "mean_test": 0.599878
+    },
+    {
+      "feature": "trans_amount_total",
+      "ks": 0.004367,
+      "smd": 0.001883,
+      "mean_train": 1295364.62835,
+      "mean_test": 1296112.1978
+    },
+    {
+      "feature": "total_deposit_balance",
+      "ks": 0.004267,
+      "smd": 0.003151,
+      "mean_train": 24145657.974733,
+      "mean_test": 24579854.120575
+    },
+    {
+      "feature": "log_total_deposit_balance",
+      "ks": 0.004267,
+      "smd": 0.000498,
+      "mean_train": 15.198574,
+      "mean_test": 15.19763
+    },
+    {
+      "feature": "is_married_bin",
+      "ks": 0.003767,
+      "smd": 0.007893,
+      "mean_train": 0.651067,
+      "mean_test": 0.6473
+    },
+    {
+      "feature": "recency_days",
+      "ks": 0.003592,
+      "smd": 0.001819,
+      "mean_train": 9.7627,
+      "mean_test": 9.7813
+    },
+    {
+      "feature": "fin_asset_trend_score",
+      "ks": 0.003233,
+      "smd": 0.002002,
+      "mean_train": -0.099315,
+      "mean_test": -0.097113
+    },
+    {
+      "feature": "total_loan_balance",
+      "ks": 0.002108,
+      "smd": 0.000794,
+      "mean_train": 11752729.7415,
+      "mean_test": 11789826.750475
+    },
+    {
+      "feature": "log_total_loan_balance",
+      "ks": 0.002108,
+      "smd": 0.000401,
+      "mean_train": 7.200881,
+      "mean_test": 7.204111
+    },
+    {
+      "feature": "card_cash_service_amt",
+      "ks": 0.001592,
+      "smd": 0.002019,
+      "mean_train": 14315.697433,
+      "mean_test": 14201.720275
+    },
+    {
+      "feature": "log_card_cash_service_amt",
+      "ks": 0.001592,
+      "smd": 0.00265,
+      "mean_train": 1.334641,
+      "mean_test": 1.325011
+    },
+    {
+      "feature": "fin_overdue_days",
+      "ks": 0.001175,
+      "smd": 0.002363,
+      "mean_train": 0.401417,
+      "mean_test": 0.399925
+    }
+  ],
+  "step0_missing": {},
+  "step0_target": {
+    "churn_rate": 0.098817,
+    "ltv_min": 3.1500000000000004,
+    "ltv_max": 17176629.0,
+    "ltv_mean": 1239289.692477,
+    "ltv_median": 807154.5,
+    "ltv_skew": 2.121404,
+    "log_ltv_skew": -1.139698
+  },
+  "step1_adversarial": {
+    "auc": 0.499509,
+    "interpretation": "drift 거의 없음 — Train/Test 유사",
+    "top_drift_features": [
+      {
+        "feature": "fin_asset_trend_score",
+        "importance": 795.6
+      },
+      {
+        "feature": "tenure_days",
+        "importance": 763.8
+      },
+      {
+        "feature": "total_deposit_balance",
+        "importance": 763.2
+      },
+      {
+        "feature": "trans_amount_min",
+        "importance": 758.2
+      },
+      {
+        "feature": "credit_score",
+        "importance": 752.4
+      },
+      {
+        "feature": "trans_amount_mean",
+        "importance": 740.4
+      },
+      {
+        "feature": "trans_amount_total",
+        "importance": 693.2
+      },
+      {
+        "feature": "online_ratio",
+        "importance": 652.8
+      },
+      {
+        "feature": "recency_days",
+        "importance": 566.6
+      },
+      {
+        "feature": "age",
+        "importance": 522.0
+      },
+      {
+        "feature": "total_loan_balance",
+        "importance": 464.4
+      },
+      {
+        "feature": "trans_count",
+        "importance": 313.2
+      },
+      {
+        "feature": "card_loan_amt",
+        "importance": 265.2
+      },
+      {
+        "feature": "num_active_cards",
+        "importance": 226.4
+      },
+      {
+        "feature": "card_cash_service_amt",
+        "importance": 222.6
+      }
+    ]
+  },
+  "step2_mannwhitney": {
+    "n_significant": 10,
+    "n_total": 21,
+    "features": [
+      {
+        "feature": "fin_asset_trend_score",
+        "p_value": 0.0,
+        "effect_size": 0.293891,
+        "significant": true
+      },
+      {
+        "feature": "card_loan_amt",
+        "p_value": 0.0,
+        "effect_size": 0.233215,
+        "significant": true
+      },
+      {
+        "feature": "log_card_loan_amt",
+        "p_value": 0.0,
+        "effect_size": 0.233215,
+        "significant": true
+      },
+      {
+        "feature": "total_deposit_balance",
+        "p_value": 0.0,
+        "effect_size": 0.207212,
+        "significant": true
+      },
+      {
+        "feature": "log_total_deposit_balance",
+        "p_value": 0.0,
+        "effect_size": 0.207212,
+        "significant": true
+      },
+      {
+        "feature": "credit_score",
+        "p_value": 0.0,
+        "effect_size": 0.111849,
+        "significant": true
+      },
+      {
+        "feature": "card_cash_service_amt",
+        "p_value": 0.0,
+        "effect_size": 0.034578,
+        "significant": true
+      },
+      {
+        "feature": "log_card_cash_service_amt",
+        "p_value": 0.0,
+        "effect_size": 0.034578,
+        "significant": true
+      },
+      {
+        "feature": "trans_amount_min",
+        "p_value": 0.059346,
+        "effect_size": 0.014894,
+        "significant": false
+      },
+      {
+        "feature": "total_loan_balance",
+        "p_value": 0.046967,
+        "effect_size": 0.014307,
+        "significant": true
+      },
+      {
+        "feature": "log_total_loan_balance",
+        "p_value": 0.046967,
+        "effect_size": 0.014307,
+        "significant": true
+      },
+      {
+        "feature": "age",
+        "p_value": 0.2434,
+        "effect_size": 0.009209,
+        "significant": false
+      },
+      {
+        "feature": "num_active_cards",
+        "p_value": 0.314969,
+        "effect_size": 0.007826,
+        "significant": false
+      },
+      {
+        "feature": "trans_amount_mean",
+        "p_value": 0.374816,
+        "effect_size": 0.00701,
+        "significant": false
+      },
+      {
+        "feature": "trans_amount_total",
+        "p_value": 0.456101,
+        "effect_size": 0.005887,
+        "significant": false
+      },
+      {
+        "feature": "fin_overdue_days",
+        "p_value": 0.447519,
+        "effect_size": 0.004951,
+        "significant": false
+      },
+      {
+        "feature": "recency_days",
+        "p_value": 0.535663,
+        "effect_size": 0.004884,
+        "significant": false
+      },
+      {
+        "feature": "trans_count",
+        "p_value": 0.569428,
+        "effect_size": 0.004482,
+        "significant": false
+      },
+      {
+        "feature": "tenure_days",
+        "p_value": 0.628527,
+        "effect_size": 0.003821,
+        "significant": false
+      },
+      {
+        "feature": "online_ratio",
+        "p_value": 0.841882,
+        "effect_size": 0.001575,
+        "significant": false
+      },
+      {
+        "feature": "is_married_bin",
+        "p_value": 0.904634,
+        "effect_size": 0.000781,
+        "significant": false
+      }
+    ]
+  },
+  "step2_null_importance": [
+    {
+      "feature": "card_loan_amt",
+      "real": 401,
+      "null_mean": 161.4,
+      "z_score": 13.958571,
+      "verdict": "real_signal"
+    },
+    {
+      "feature": "total_deposit_balance",
+      "real": 771,
+      "null_mean": 513.133333,
+      "z_score": 12.199647,
+      "verdict": "real_signal"
+    },
+    {
+      "feature": "log_card_loan_amt",
+      "real": 98,
+      "null_mean": 27.0,
+      "z_score": 9.591092,
+      "verdict": "real_signal"
+    },
+    {
+      "feature": "card_cash_service_amt",
+      "real": 192,
+      "null_mean": 112.066667,
+      "z_score": 4.56902,
+      "verdict": "real_signal"
+    },
+    {
+      "feature": "log_total_deposit_balance",
+      "real": 161,
+      "null_mean": 95.0,
+      "z_score": 4.38896,
+      "verdict": "real_signal"
+    },
+    {
+      "feature": "log_card_cash_service_amt",
+      "real": 39,
+      "null_mean": 22.266667,
+      "z_score": 2.494581,
+      "verdict": "ambiguous"
+    },
+    {
+      "feature": "credit_score",
+      "real": 555,
+      "null_mean": 524.933333,
+      "z_score": 1.23748,
+      "verdict": "ambiguous"
+    },
+    {
+      "feature": "fin_overdue_days",
+      "real": 69,
+      "null_mean": 64.133333,
+      "z_score": 0.378355,
+      "verdict": "noise"
+    },
+    {
+      "feature": "trans_count",
+      "real": 214,
+      "null_mean": 213.133333,
+      "z_score": 0.052219,
+      "verdict": "noise"
+    },
+    {
+      "feature": "log_total_loan_balance",
+      "real": 47,
+      "null_mean": 59.133333,
+      "z_score": -0.858854,
+      "verdict": "noise"
+    },
+    {
+      "feature": "fin_asset_trend_score",
+      "real": 477,
+      "null_mean": 513.533333,
+      "z_score": -0.886451,
+      "verdict": "noise"
+    },
+    {
+      "feature": "total_loan_balance",
+      "real": 274,
+      "null_mean": 300.2,
+      "z_score": -0.923375,
+      "verdict": "noise"
+    },
+    {
+      "feature": "recency_days",
+      "real": 327,
+      "null_mean": 359.066667,
+      "z_score": -1.11283,
+      "verdict": "noise"
+    },
+    {
+      "feature": "is_married_bin",
+      "real": 22,
+      "null_mean": 51.933333,
+      "z_score": -2.886639,
+      "verdict": "noise"
+    },
+    {
+      "feature": "trans_amount_total",
+      "real": 357,
+      "null_mean": 448.666667,
+      "z_score": -2.978312,
+      "verdict": "noise"
+    },
+    {
+      "feature": "age",
+      "real": 302,
+      "null_mean": 371.0,
+      "z_score": -2.980717,
+      "verdict": "noise"
+    },
+    {
+      "feature": "tenure_days",
+      "real": 425,
+      "null_mean": 511.733333,
+      "z_score": -3.175117,
+      "verdict": "noise"
+    },
+    {
+      "feature": "num_active_cards",
+      "real": 131,
+      "null_mean": 164.133333,
+      "z_score": -3.508536,
+      "verdict": "noise"
+    },
+    {
+      "feature": "trans_amount_mean",
+      "real": 388,
+      "null_mean": 496.933333,
+      "z_score": -3.625886,
+      "verdict": "noise"
+    },
+    {
+      "feature": "online_ratio",
+      "real": 348,
+      "null_mean": 461.266667,
+      "z_score": -3.769845,
+      "verdict": "noise"
+    },
+    {
+      "feature": "trans_amount_min",
+      "real": 402,
+      "null_mean": 529.333333,
+      "z_score": -4.521676,
+      "verdict": "noise"
+    }
+  ],
+  "step3_cv": {
+    "oof_auc": 0.79041,
+    "fold_aucs": [
+      0.791904,
+      0.775043,
+      0.795952,
+      0.79846,
+      0.796691
+    ],
+    "fold_std": 0.008558,
+    "note": "이 진단용 핵심피처 CV는 5주차 풀피처(0.793)와 다를 수 있음. 절대값보다 drift/신호 진단이 목적."
+  }
+}
