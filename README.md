@@ -1,4 +1,4 @@
-# 고객 이탈·LTV 예측 — 대회 출품작 및 사후 모델 재설계
+# Kdiss & SAS KOREA 데이터 분석 경진대회 대회 출품작 및 사후 모델링 통합
 
 > 한국데이터정보과학회 & SAS KOREA 제2회 데이터 분석 경진대회 출품작과, 대회 종료 후 단독으로 진행한 모델 개선 실험 결과물 통합 저장
 
@@ -7,8 +7,8 @@
 6만 명 가상 고객의 3개 이종 테이블을 결합해 **이탈 확률(AUC)** 과 **1년 LTV(RMSE)** 를 동시 예측하는 과제. 대회에서 0.794로 수렴한 모델을, 종료 후 검증 체계 재설계를 통해 **Churn AUC 0.7943 → 0.7982**로 개선함. 나아가 개선의 주동력으로 지목된 튜닝 효과를 AB Test로 재검증함.
 
 ```
-baseline/   대회 종료 시점 결과물 (출발점)
-improved/   사후 재설계 (진단 → 실험 → 개선 → 가설검증)
+baseline/   대회 종료 시점 결과물 (개선 실험 출발점)
+improved/   사후 실험 (기존 모델 진단 → 실험 → 개선 → 가설검증)
 docs/       제공 데이터 ERD
 ```
 
@@ -107,4 +107,4 @@ docs/       제공 데이터 ERD
 
 ## 상세 보고서
 
-📄 **자세한 진행 과정 및 개선 결과: [`reports/improvement_report.md`](reports/improvement_report.md)**
+📄 **자세한 진행 과정 및 개선 결과: [`improved/reports/improvement_report.md`](improved/reports/improvement_report.md)**
